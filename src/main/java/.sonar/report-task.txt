@@ -1,0 +1,5 @@
+projectKey=JavaProject
+serverUrl=http://192.168.137.1/sonar
+dashboardUrl=http://192.168.137.1/sonar/dashboard/index/JavaProject
+ceTaskId=AWacruhYu--mVD1qd8qW
+ceTaskUrl=http://192.168.137.1/sonar/api/ce/task?id=AWacruhYu--mVD1qd8qW

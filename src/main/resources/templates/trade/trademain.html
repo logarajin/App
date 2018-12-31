@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stock Trading Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+ <p></p><p></p><p></p> <p></p> <p></p><p>
+    
+<div class="container">
+    <div th:if="${not #lists.isEmpty(trade.tradeList)}">
+       
+        <table border="1" >
+            <tr>
+                <th>TICKER</th>
+                <th>PRICE</th>
+              
+            </tr>
+            <tr th:each="trade : ${trade.tradeList}">
+                <td th:text="${trade.ticker}"></td>
+                <td th:text="${trade.price}"></td>
+               
+            </tr>
+        </table>
+        
+    </div>
+  <br/><br/><br/><br/><br/>
+    
+   <div class="container">
+
+    <h2>Stock Trading</h2>
+    <div>
+        <form class="form-horizontal" th:object="${trade}" th:action="@{/trade/add}" method="post">
+
+          
+            <div class="form-group" th:class="${#fields.hasErrors('ticker')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Ticker:&nbsp;&nbsp;&nbsp;</label>
+               <select th:field="*{ticker}">
+                <option th:value="''" th:text="Select"></option>
+			    <option th:value="WIPRO" th:text="WIPRO"></option>
+			    <option th:value="INFY" th:text="INFY"></option>
+			     <option th:value="TCS" th:text="TCS"></option>
+			    <option th:value="TECHM" th:text="TECHM"></option>
+			</select>
+                
+
+                  
+            </div>
+             <br/>
+               <div class="form-group" th:class="${#fields.hasErrors('quantity')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Quantity:</label>
+            
+                    <input type="text" class="form-control" th:field="*{quantity}" th:errorclass="has-error"/>
+
+                   
+                </div>
+            </div>
+
+          <br/>
+
+         
+            <div class="row">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+    
+    
+</div>
+
+</body>
+</html>

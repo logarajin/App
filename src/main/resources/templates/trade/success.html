@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Stock Trading Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body bgcolor="orange">
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-10">
+			           <h3>Traded Successfully <span th:text="${user.userId}"/> your balance now is::<span th:text="${trade.balance}"/> </h3>
+			           
+			           <a th:href="@{/trade/trade}">Trade Again</a>
+			           
+			           <a th:href="@{/register}">Exit</a>
+			           
+			          
+                    </div>
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
